@@ -1,0 +1,36 @@
+正确表达式：
+#include<stdio.h>
+int main()
+{
+	double F;
+	printf("输入华氏温度:");
+	scanf_s("%lf",&F);
+	double C=5.0/9*(F-32);
+	printf("摄氏温度为%lf", C);
+	return 0;
+}
+
+错误1：
+#include<stdio.h>
+int main()
+{
+	double F;
+	printf("输入华氏温度:");
+	scanf_s("%lf",&F);
+	double C=5/9*(F-32);\\用5替代5.0，因为整数相除得到的数是商加余数，不会有小数，所以5\9恒为0，结果为0，用5.0/9等到小数商不会有余
+	printf("摄氏温度为%lf", C);
+	return 0;
+}
+
+错误2：
+#include<stdio.h>
+int main()
+{
+	double F;
+  double C=5.0/9*(F-32);\\位置替换，因为F没有赋值，导致无法运行
+	printf("输入华氏温度:");
+	scanf_s("%lf",&F);
+	printf("摄氏温度为%lf", C);
+	return 0;
+
+}
