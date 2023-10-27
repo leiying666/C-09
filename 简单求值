@@ -1,0 +1,9 @@
+#include<stdio.h>
+int main()
+{
+	int a = 2, b = 3, c = 4;
+	double x = 1.414;
+	printf("值=%lf", a * x * x * x + b * x * x + c);
+	return 0;
+
+}
